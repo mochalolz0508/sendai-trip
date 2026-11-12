@@ -154,6 +154,13 @@ ul.plain li span{color:var(--muted)}
   <section id="days" aria-label="逐日行程"></section>
 
   <section>
+    <h2>狐狸村須知</h2>
+    <div class="tbl"><table>
+      <tbody id="fox"></tbody>
+    </table></div>
+  </section>
+
+  <section>
     <h2>酒店</h2>
     <div class="tbl"><table>
       <thead><tr><th>#</th><th>地區</th><th>Check-in</th><th>Check-out</th><th>晚</th><th>留意</th></tr></thead>
@@ -191,7 +198,7 @@ ul.plain li span{color:var(--muted)}
     </ul>
   </section>
 
-  <p class="updated">更新：2026-11-12（加多啲景點、必食、動物園）</p>
+  <p class="updated">更新：2026-11-12（加多啲景點、必食、動物園、狐狸村）</p>
 </div>
 
 <script>
@@ -236,20 +243,29 @@ const DATA = {
     ],
     [
      "10:15",
-     "狐狸村",
+     "到狐狸村",
      1
     ],
     [
-     "11:45",
+     "10:30",
+     "排隊抱狐狸（11:00 場，先到先得）",
+     1
+    ],
+    [
+     "11:15",
+     "行放養區，喺餵食場餵狐狸"
+    ],
+    [
+     "12:15",
      "白石城＋武家屋敷"
     ],
     [
-     "12:45",
+     "13:00",
      "午餐白石温麺"
     ],
     [
-     "15:15",
-     "返到藏王"
+     "14:00",
+     "出發返藏王"
     ],
     [
      "16:00",
@@ -263,7 +279,7 @@ const DATA = {
    ],
    "stay": "藏王溫泉",
    "drive": "約 150 km · 2.5–3 hr（來回）",
-   "check": "樹冰點燈日子未公布"
+   "check": "抱狐狸 11:00、14:00，唔使預約，帶現金"
   },
   {
    "d": "2/13",
@@ -685,6 +701,36 @@ const DATA = {
    "萩之月、笹蒲鉾、喜久福",
    ""
   ]
+ ],
+ "fox": [
+  [
+   "開放",
+   "冬季 9:00–16:00，15:30 最後入場；逢星期三休息；落大雪會早閂"
+  ],
+  [
+   "入場",
+   "中學生以上 ¥1,500"
+  ],
+  [
+   "抱狐狸",
+   "每日 11:00、14:00 兩場，唔使預約，先到先得；高中生以上先可以參加；大約 3–5 分鐘；網上寫 ¥1,000、只收現金（官網冇寫價錢）"
+  ],
+  [
+   "餵狐狸",
+   "只可以喺放養區中間嘅餵食場，用買嘅專用飼料"
+  ],
+  [
+   "唔准",
+   "喺放養區摸狐狸、坐低、用自拍棍"
+  ],
+  [
+   "要著",
+   "褲同鞋；唔好著裙、拖鞋、高踭鞋，衫褲唔好有吊吊揈嘅帶"
+  ],
+  [
+   "其他",
+   "有兔仔、山羊、小馬可以摸；摸完要洗手"
+  ]
  ]
 };
 
@@ -699,6 +745,7 @@ days.innerHTML = `<h2>逐日行程</h2>` + DATA.days.map((x,i) => `
     <ul class="tl">${x.items.map(([t,w,m]) => `<li class="t">${esc(t)}</li><li class="w">${esc(w)}${m ? '<span class="badge">必去</span>' : ''}</li>`).join("")}</ul>
     <div class="foot"><span>住 <b>${esc(x.stay)}</b></span><span>揸車 <b>${esc(x.drive)}</b></span>${x.check ? `<span class="chk">要 check：${esc(x.check)}</span>` : ''}</div>
   </article>`).join("");
+document.getElementById("fox").innerHTML = DATA.fox.map(f => `<tr><th scope="row">${esc(f[0])}</th><td>${esc(f[1])}</td></tr>`).join("");
 document.getElementById("hotels").innerHTML = DATA.hotels.map(h =>
   `<tr><td>${h[0]}</td><td>${esc(h[1])}</td><td class="num">${esc(h[2])}</td><td class="num">${esc(h[3])}</td><td class="num">${h[4]}</td><td>${esc(h[5])}</td></tr>`).join("");
 document.getElementById("todo").innerHTML = DATA.todo.map(t => `<tr><td>${esc(t[0])}</td><td>${esc(t[1])}</td></tr>`).join("");
