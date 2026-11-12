@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>仙台冬日自駕 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column; route map up top, then one card per day, hotels + to-dos at the end */
+:root{
+  --bg:#F2F5F8; --surface:#FFFFFF; --ink:#15233A; --muted:#5A6A7F; --line:#D5DDE7;
+  --accent:#2E5B8A; --accent-soft:#E3ECF5; --lamp:#B8731F; --lamp-soft:#F7E9D4; --road:#9FB3C8;
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E151E; --surface:#16202C; --ink:#E5ECF4; --muted:#92A2B6; --line:#283545;
+  --accent:#8EB5DE; --accent-soft:#1D2C3D; --lamp:#E5A95C; --lamp-soft:#35281A; --road:#4A5D72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E151E; --surface:#16202C; --ink:#E5ECF4; --muted:#92A2B6; --line:#283545;
+  --accent:#8EB5DE; --accent-soft:#1D2C3D; --lamp:#E5A95C; --lamp-soft:#35281A; --road:#4A5D72; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 56px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:36px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(28px,6vw,38px)}
+h2{font-size:21px}
+h3{font-size:18px}
+.kicker{font-size:12px;letter-spacing:.14em;color:var(--muted);margin:0 0 6px}
+.sub{color:var(--muted);margin:6px 0 0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}
+.fact .lbl{font-size:12px;letter-spacing:.1em;color:var(--muted)}
+.fact p{margin:4px 0 0}
+.must-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--lamp-soft);color:var(--lamp);font-weight:500}
+
+nav.days{display:flex;flex-wrap:wrap;gap:6px}
+nav.days a{font-family:var(--f-mono);font-size:13px;text-decoration:none;color:var(--accent);
+  border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:var(--surface)}
+nav.days a:focus-visible,nav.days a:hover{border-color:var(--accent)}
+
+.map{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;overflow-x:auto}
+.map svg{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
+.map .note{font-size:12px;color:var(--muted);text-align:center;margin:4px 0 0}
+
+section{display:flex;flex-direction:column;gap:14px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;
+  display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}
+.day-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.day-no{font-family:var(--f-mono);font-size:13px;color:var(--accent);background:var(--accent-soft);
+  border-radius:6px;padding:2px 8px}
+.day-date{font-family:var(--f-mono);color:var(--muted);font-size:14px}
+.route{font-size:14px;color:var(--muted);margin:0}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:6px}
+.tl .t{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:2px;white-space:nowrap}
+.tl .w{min-width:0}
+.badge{display:inline-block;font-size:11px;letter-spacing:.06em;font-weight:700;color:var(--lamp);
+  background:var(--lamp-soft);border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:2px}
+.foot{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.foot b{color:var(--ink);font-weight:500}
+.foot .chk{color:var(--lamp)}
+
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:none}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+ul.plain{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+ul.plain li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+ul.plain li span{color:var(--muted)}
+.updated{font-size:12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">東北 · 宮城 山形 岩手</p>
+    <h1>仙台冬日自駕</h1>
+    <p class="sub"><span class="mono">2027/2/11–2/19</span> · 9 日 8 夜 · 2 人 · 4 間酒店</p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="lbl">航班 HK Express</div>
+        <p><span class="mono">UO890</span> 2/11（四）香港 T2 <span class="mono">09:00</span> → 仙台 <span class="mono">14:05</span></p>
+        <p><span class="mono">UO891</span> 2/19（五）仙台 <span class="mono">15:00</span> → 香港 T1 <span class="mono">19:40</span></p>
+      </div>
+      <div class="fact">
+        <div class="lbl">租車 Nippon Rent-A-Car</div>
+        <p>SUV 4WD，雪胎</p>
+        <p>仙台機場取 2/11 <span class="mono">15:00</span><br>仙台站還 2/17 <span class="mono">18:00</span></p>
+      </div>
+    </div>
+    <div class="must-row" aria-label="必去">
+      <span class="chip">必去：山寺</span><span class="chip">藏王樹冰</span><span class="chip">狐狸村</span><span class="chip">銀山溫泉</span><span class="chip">三井 Outlet</span>
+    </div>
+  </header>
+
+  <nav class="days" id="daynav" aria-label="跳去邊日"></nav>
+
+  <div class="map" aria-label="路線示意圖">
+    <svg viewBox="0 0 360 400" role="img" aria-label="環迴路線：仙台機場、藏王、山寺、銀山、新庄、最上川、鳴子峽、一關、平泉、松島、鹽竈、仙台">
+      <g fill="none" stroke="var(--road)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="238,322 100,302 122,258 88,186 98,138 58,128 98,138 166,142 232,64 224,40 262,54 232,64 272,224 255,246 216,272"/>
+      </g>
+      <g fill="none" stroke="var(--road)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round">
+        <polyline points="100,302 166,362"/>
+        <polyline points="216,272 178,282 246,264 216,272"/>
+      </g>
+      <g font-family="Noto Sans TC, PingFang TC, sans-serif" font-size="12" fill="var(--ink)">
+        <g fill="var(--accent)">
+          <circle cx="100" cy="302" r="6"/><circle cx="98" cy="138" r="6"/><circle cx="232" cy="64" r="6"/><circle cx="216" cy="272" r="6"/>
+        </g>
+        <g fill="var(--lamp)">
+          <circle cx="166" cy="362" r="4.5"/><circle cx="122" cy="258" r="4.5"/><circle cx="88" cy="186" r="4.5"/><circle cx="246" cy="264" r="4.5"/>
+        </g>
+        <g fill="var(--muted)">
+          <circle cx="238" cy="322" r="3.5"/><circle cx="58" cy="128" r="3.5"/><circle cx="166" cy="142" r="3.5"/><circle cx="224" cy="40" r="3.5"/><circle cx="262" cy="54" r="3.5"/><circle cx="272" cy="224" r="3.5"/><circle cx="255" cy="246" r="3.5"/><circle cx="178" cy="282" r="3.5"/>
+        </g>
+        <text x="112" y="318" font-weight="700">① 藏王溫泉</text>
+        <text x="108" y="128" font-weight="700">② 新庄</text>
+        <text x="190" y="80" font-weight="700">③ 一關</text>
+        <text x="196" y="294" font-weight="700">④ 仙台</text>
+        <text x="176" y="378" fill="var(--lamp)">狐狸村</text>
+        <text x="132" y="254" fill="var(--lamp)">山寺</text>
+        <text x="22" y="200" fill="var(--lamp)">銀山溫泉</text>
+        <text x="256" y="282" fill="var(--lamp)">Outlet</text>
+        <text x="246" y="340" fill="var(--muted)">仙台機場</text>
+        <text x="14" y="118" fill="var(--muted)">最上川</text>
+        <text x="174" y="160" fill="var(--muted)">鳴子峽</text>
+        <text x="200" y="30" fill="var(--muted)">平泉</text>
+        <text x="270" y="48" fill="var(--muted)">猊鼻溪</text>
+        <text x="282" y="222" fill="var(--muted)">松島</text>
+        <text x="266" y="246" fill="var(--muted)">鹽竈</text>
+        <text x="140" y="300" fill="var(--muted)">秋保</text>
+        <text x="320" y="24" fill="var(--muted)" font-size="11">北 ↑</text>
+      </g>
+    </svg>
+    <p class="note">示意圖，唔係按比例 · 藍點 = 酒店 · 橙點 = 必去 · 虛線 = 來回</p>
+  </div>
+
+  <section id="days" aria-label="逐日行程"></section>
+
+  <section>
+    <h2>酒店</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>地區</th><th>Check-in</th><th>Check-out</th><th>晚</th><th>留意</th></tr></thead>
+      <tbody id="hotels"></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>要 check／預約</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>項目</th><th>幾時處理</th></tr></thead>
+      <tbody id="todo"></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>冇排入去</h2>
+    <ul class="plain" id="out"></ul>
+  </section>
+
+  <section>
+    <h2>仙台機場</h2>
+    <ul class="plain">
+      <li>餐廳同大部分手信都喺<b>出境前</b>，過咗安檢只有一間咖啡店</li>
+      <li>出境前買手信唔好買液體、膏狀嘢</li>
+      <li>退稅機喺 1F 國際線角落，掃護照約 10 秒</li>
+    </ul>
+  </section>
+
+  <p class="updated">更新：2026-11-12</p>
+</div>
+
+<script>
+const DATA = {
+  days: [
+    {d:"2/11", w:"四", title:"抵達，上藏王", route:"仙台機場 → 藏王溫泉",
+     items:[["14:05","到仙台機場，過關"],["15:00","機場分店取車，即刻出發"],["16:50","到藏王溫泉（17:00 左右天黑）"],["夜","有點燈就去睇樹冰"]],
+     stay:"藏王溫泉", drive:"約 100 km · 1.5 hr", check:"取車即走，唔好喺機場逗留"},
+    {d:"2/12", w:"五", title:"狐狸村、樹冰", route:"藏王 → 狐狸村 → 藏王",
+     items:[["09:00","出發去白石"],["10:15","狐狸村",1],["12:00","午餐白石温麺（可加白石城）"],["14:15","返到藏王"],["16:00","坐纜車上地藏山頂睇樹冰，等日落同點燈",1]],
+     stay:"藏王溫泉", drive:"約 150 km · 2.5–3 hr（來回）", check:"樹冰點燈日子未公布"},
+    {d:"2/13", w:"六", title:"山寺、銀山", route:"藏王 → 山寺 → 銀山 → 新庄",
+     items:[["08:30","（後備）天氣差就再上樹冰"],["10:40","山寺，爬 1015 級，來回約 2 hr",1],["12:45","午餐，試力蒟蒻"],["14:45","尾花澤大正ろまん館泊車"],["15:30","坐接駁巴士入銀山，睇黃昏煤氣燈",1],["19:00","新庄 check-in"]],
+     stay:"新庄", drive:"約 115 km · 2.5 hr", check:"銀山接駁巴士要預約"},
+    {d:"2/14", w:"日", title:"最上川雪見舟", route:"新庄 → 最上川 → 鳴子峽 → 一關",
+     items:[["09:30","出發去古口"],["10:00","最上川雪見舟，暖爐船，單程約 1 hr"],["12:00","古口午餐"],["12:45","行 47 號國道去鳴子峽觀景台"],["15:30","到一關"],["夜","一關年糕料理"]],
+     stay:"一關", drive:"約 170 km · 3 hr", check:"雪見舟冬季船班"},
+    {d:"2/15", w:"一", title:"平泉、猊鼻溪", route:"一關 → 平泉 → 猊鼻溪 → 一關",
+     items:[["09:00","中尊寺金色堂（步道滑，著防滑鞋）"],["11:30","平泉午餐"],["13:00","猊鼻溪暖爐船，來回約 90 分鐘"],["15:30","返一關休息"]],
+     stay:"一關（同一間）", drive:"約 60 km · 1.5 hr", check:"冬季開放時間"},
+    {d:"2/16", w:"二", title:"松島、鹽竈魚生", route:"一關 → 松島 → 鹽竈 → 仙台",
+     items:[["08:30","出發去松島"],["10:00","松島灣遊覽船，約 50 分鐘"],["11:00","瑞巖寺、五大堂、圓通院"],["13:00","鹽竈食壽司、魚生"],["14:30","鹽竈神社"],["16:00","仙台站酒店 check-in"]],
+     stay:"仙台站", drive:"約 140 km · 2.5 hr", check:"酒店泊車 1 晚"},
+    {d:"2/17", w:"三", title:"Outlet，還車", route:"仙台 → 秋保 → Outlet → 仙台站",
+     items:[["09:30","（可選）秋保大瀑布、磊磊峽"],["13:00","三井 Outlet 仙台港",1],["17:30","入滿油，留收據"],["18:00","仙台站還車"]],
+     stay:"仙台站", drive:"約 70 km · 2 hr", check:""},
+    {d:"2/18", w:"四", title:"仙台市區", route:"冇車",
+     items:[["上午","Loople 一日券：瑞鳳殿、仙台城跡"],["下午","大崎八幡宮、定禪寺通、一番町"],["夜","牛舌、國分町"]],
+     stay:"仙台站", drive:"冇車", check:""},
+    {d:"2/19", w:"五", title:"返港", route:"仙台 → 機場",
+     items:[["09:00","check-out，行仙台朝市"],["10:30","仙台站買手信"],["11:20","坐機場 Access 線，約 25 分鐘"],["12:00","到機場，先食飯買手信"],["15:00","UO891 起飛，19:40 到香港"]],
+     stay:"—", drive:"Access 線", check:""}
+  ],
+  hotels: [
+    ["①","藏王溫泉","2/11（四）","2/13（六）",2,"要泊車 · 2/11 約 17:00 先到"],
+    ["②","新庄","2/13（六）","2/14（日）",1,"要泊車 · 約 19:00 先 check-in"],
+    ["③","一關","2/14（日）","2/16（二）",2,"要泊車"],
+    ["④","仙台站附近","2/16（二）","2/19（五）",3,"只係 2/16 要泊車 · 行路去仙台站"]
+  ],
+  todo: [
+    ["酒店 ①–④（揀可免費取消，先 book 藏王同仙台）","而家"],
+    ["國際駕駛執照 IDP","而家"],
+    ["樹冰點燈日子（2/11、2/12 有冇開）","2026-27 季公布後"],
+    ["銀山接駁巴士（2/13 星期六）","公布後即刻 book"],
+    ["最上川雪見舟冬季船班","出發前 1–2 個月"],
+    ["狐狸村、中尊寺、猊鼻溪冬季時間","出發前"]
+  ],
+  out: [
+    ["藏王御釜、Echo Line","冬季封路（大約 11 月至 4 月尾）"],
+    ["鳴子溫泉","唔浸溫泉，只係經過鳴子峽"],
+    ["石卷","2/16 萬畫館好可能休館，食魚生改去鹽竈"],
+    ["田代島","冬天渡輪少又成日停航，想去可以頂替 2/16 松島"]
+  ]
+};
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const nav = document.getElementById("daynav");
+const days = document.getElementById("days");
+nav.innerHTML = DATA.days.map((x,i) => `<a href="#d${i+1}">D${i+1} ${esc(x.d)}</a>`).join("");
+days.innerHTML = `<h2>逐日行程</h2>` + DATA.days.map((x,i) => `
+  <article class="day" id="d${i+1}">
+    <div class="day-head"><span class="day-no">D${i+1}</span><h3>${esc(x.title)}</h3><span class="day-date">${esc(x.d)}（${esc(x.w)}）</span></div>
+    <p class="route">${esc(x.route)}</p>
+    <ul class="tl">${x.items.map(([t,w,m]) => `<li class="t">${esc(t)}</li><li class="w">${esc(w)}${m ? '<span class="badge">必去</span>' : ''}</li>`).join("")}</ul>
+    <div class="foot"><span>住 <b>${esc(x.stay)}</b></span><span>揸車 <b>${esc(x.drive)}</b></span>${x.check ? `<span class="chk">要 check：${esc(x.check)}</span>` : ''}</div>
+  </article>`).join("");
+document.getElementById("hotels").innerHTML = DATA.hotels.map(h =>
+  `<tr><td>${h[0]}</td><td>${esc(h[1])}</td><td class="num">${esc(h[2])}</td><td class="num">${esc(h[3])}</td><td class="num">${h[4]}</td><td>${esc(h[5])}</td></tr>`).join("");
+document.getElementById("todo").innerHTML = DATA.todo.map(t => `<tr><td>${esc(t[0])}</td><td>${esc(t[1])}</td></tr>`).join("");
+document.getElementById("out").innerHTML = DATA.out.map(o => `<li><b>${esc(o[0])}</b> <span>· ${esc(o[1])}</span></li>`).join("");
+</script>
+
+</body>
+</html>
