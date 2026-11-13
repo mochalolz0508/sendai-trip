@@ -117,22 +117,22 @@ ul.plain li span{color:var(--muted)}
   <nav class="days" id="daynav" aria-label="跳去邊日"></nav>
 
   <div class="map" aria-label="路線示意圖">
-    <svg viewBox="0 0 360 480" role="img" aria-label="全東北環迴路線：仙台機場、藏王、狐狸村、山寺、橫手、角館、田澤湖、十和田湖、奧入瀨、盛岡、平泉、猊鼻溪、仙台、松島、鹽竈">
+    <svg viewBox="0 0 360 480" role="img" aria-label="全東北環迴路線：仙台機場、金蛇水神社、藏王樹冰、山形、狐狸村、山寺、橫手、角館、田澤湖、十和田湖、奧入瀨、盛岡、平泉、猊鼻溪、仙台、松島、鹽竈">
       <g font-family="Noto Sans TC, PingFang TC, sans-serif" font-size="13" fill="var(--line)" font-weight="700" letter-spacing="2">
         <text x="300" y="86">青森</text><text x="40" y="196">秋田</text><text x="300" y="200">岩手</text><text x="36" y="330">山形</text><text x="300" y="440">宮城</text>
       </g>
       <g fill="none" stroke="var(--road)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="240,410 222,428 130,400 190,445 205,330 215,240 150,225 160,175 175,150 222,132 250,40 275,30 240,150 245,250 275,255 225,380 272,345 252,364 262,382 225,380"/>
+        <polyline points="240,410 222,428 135,408 112,380 190,445 205,330 215,240 150,225 160,175 175,150 222,132 250,40 275,30 240,150 245,250 275,255 225,380 272,345 252,364 262,382 225,380"/>
       </g>
       <g fill="none" stroke="var(--road)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round">
-        <polyline points="130,400 150,365"/>
+        <polyline points="112,380 150,365"/><polyline points="112,380 135,408"/>
       </g>
       <g font-family="Noto Sans TC, PingFang TC, sans-serif" font-size="12" fill="var(--ink)">
         <g fill="var(--accent)">
-          <circle cx="130" cy="400" r="6"/><circle cx="150" cy="225" r="6"/><circle cx="250" cy="40" r="6"/><circle cx="240" cy="150" r="6"/><circle cx="225" cy="380" r="6"/>
+          <circle cx="112" cy="380" r="6"/><circle cx="150" cy="225" r="6"/><circle cx="250" cy="40" r="6"/><circle cx="240" cy="150" r="6"/><circle cx="225" cy="380" r="6"/>
         </g>
         <g fill="var(--lamp)">
-          <circle cx="190" cy="445" r="4.5"/><circle cx="150" cy="365" r="4.5"/><circle cx="262" cy="382" r="4.5"/>
+          <circle cx="190" cy="445" r="4.5"/><circle cx="135" cy="408" r="4.5"/><circle cx="150" cy="365" r="4.5"/><circle cx="262" cy="382" r="4.5"/>
         </g>
         <g fill="var(--muted)">
           <circle cx="240" cy="410" r="3.5"/><circle cx="222" cy="428" r="3.5"/><circle cx="160" cy="175" r="3.5"/><circle cx="175" cy="150" r="3.5"/><circle cx="275" cy="30" r="3.5"/><circle cx="245" cy="250" r="3.5"/><circle cx="275" cy="255" r="3.5"/><circle cx="272" cy="345" r="3.5"/><circle cx="252" cy="364" r="3.5"/>
@@ -141,8 +141,8 @@ ul.plain li span{color:var(--muted)}
         <text x="140" y="229" text-anchor="end" font-weight="700">② 橫手</text>
         <text x="250" y="146" font-weight="700">④ 盛岡</text>
         <text x="216" y="384" text-anchor="end" font-weight="700">⑤ 仙台</text>
-        <text x="120" y="404" text-anchor="end" font-weight="700">① 藏王</text>
-        <text x="120" y="418" text-anchor="end" fill="var(--lamp)">樹冰</text>
+        <text x="102" y="384" text-anchor="end" font-weight="700">① 山形</text>
+        <text x="128" y="426" text-anchor="end" fill="var(--lamp)">藏王樹冰</text>
         <text x="200" y="459" fill="var(--lamp)">狐狸村</text>
         <text x="140" y="369" text-anchor="end" fill="var(--lamp)">山寺</text>
         <text x="272" y="398" fill="var(--lamp)">Outlet</text>
@@ -213,7 +213,7 @@ ul.plain li span{color:var(--muted)}
     </ul>
   </section>
 
-  <p class="updated">更新：2026-11-13（加地點 Google Maps 連結）</p>
+  <p class="updated">更新：2026-11-13（頭兩晚改住山形站前）</p>
 </div>
 
 <script>
@@ -223,7 +223,7 @@ const DATA = {
    "d": "2/11",
    "w": "四",
    "title": "金蛇水神社、樹冰點燈",
-   "route": "仙台機場 → 金蛇水神社 → 藏王溫泉",
+   "route": "仙台機場 → 金蛇水神社 → 藏王（樹冰）→ 山形市",
    "items": [
     [
      "14:05",
@@ -239,69 +239,73 @@ const DATA = {
     ],
     [
      "16:10",
-     "出發去藏王，約 1 hr 20 分"
+     "直接上藏王，約 1 hr 20 分"
     ],
     [
      "17:30",
-     "到藏王溫泉 check-in"
-    ],
-    [
-     "18:00",
-     "酒店晚餐（山形牛）"
+     "坐纜車睇樹冰點燈（夜景版）",
+     1
     ],
     [
      "19:00",
-     "坐纜車睇樹冰點燈（夜景版）",
-     1
+     "揸車落山（慢慢揸、用低波）"
+    ],
+    [
+     "19:30",
+     "山形站前 check-in"
+    ],
+    [
+     "19:45",
+     "山形牛晚餐，行站前"
     ]
    ],
-   "stay": "藏王溫泉",
-   "drive": "約 115 km · 1.75 hr",
-   "check": "航班遲過 14:30 或落大雪就唔去金蛇水神社；最後一段山路會開始天黑"
+   "stay": "山形站前（Richmond）",
+   "drive": "約 130 km · 2 hr",
+   "check": "航班遲過 14:30 或落大雪就唔去金蛇；2/11 冇點燈就直接去山形；落山小心黑冰"
   },
   {
    "d": "2/12",
    "w": "五",
-   "title": "山寺、樹冰（按天氣揀版本）",
-   "route": "藏王 → 山寺 → 藏王",
+   "title": "樹冰、山寺、天童（按天氣揀版本）",
+   "route": "山形 → 藏王樹冰 → 山寺 → 天童 → 山形",
    "items": [
     [
      "A 晴天",
-     "08:30 樹冰朝早版 → 10:40 山寺 → 下晝天童 AEON 行街，或者返酒店休息",
+     "08:00 出發 → 08:40 樹冰朝早版 → 10:45 山寺 → 下晝天童 AEON 行街",
      1
     ],
     [
      "B 朝早差",
-     "朝早先去山寺 → 下晝返藏王坐纜車睇樹冰、日落",
+     "09:00 山寺（山形去約 20 分鐘）→ 下晝 14:30 上藏王睇樹冰、日落、點燈",
      1
     ],
     [
      "C 風雪",
-     "山寺 → 天童 AEON 或者山形市行街（室內），樹冰留 D3 朝早試",
+     "山寺 → 天童 AEON 行街（室內），樹冰留 D3 朝早試",
      1
     ],
     [
      "午餐",
-     "山寺力蒟蒻"
+     "山寺力蒟蒻、蕎麥麵"
     ],
     [
      "夜",
-     "酒店晚餐，或者溫泉街食藏王烤羊肉；想再睇就去點燈"
+     "返山形市：山形牛／居酒屋，行七日町、山形站 S-PAL"
     ]
    ],
-   "stay": "藏王溫泉",
-   "drive": "約 80 km · 1.5 hr",
+   "stay": "山形站前（Richmond）",
+   "drive": "約 120 km · 2.5 hr",
    "check": "朝早睇纜車運行狀況，send 天氣俾 Claude 揀版本"
   },
   {
    "d": "2/13",
    "w": "六",
    "title": "狐狸村、橫手雪屋祭",
-   "route": "藏王 → 狐狸村 → 秋田橫手",
+   "route": "山形 → 狐狸村 → 秋田橫手",
    "items": [
     [
      "09:00",
-     "出發去狐狸村"
+     "由山形出發"
     ],
     [
      "10:15",
@@ -340,7 +344,7 @@ const DATA = {
     ],
     [
      "C 風雪",
-     "08:30 先試坐纜車 → 抱 14:00 場 → 約 18:00 到橫手"
+     "08:00 先上藏王試坐纜車 → 抱 14:00 場 → 約 18:00 到橫手"
     ]
    ],
    "stay": "橫手",
@@ -589,11 +593,11 @@ const DATA = {
  "hotels": [
   [
    "①",
-   "藏王溫泉（近纜車山麓站）",
+   "山形站前（Richmond Hotel 山形站前）",
    "2/11（四）",
    "2/13（六）",
    2,
-   "一泊二食（有山形牛更好）· 訂房網揀「藏王, 山形」，唔好揀白石／藏王車站"
+   "要問泊車 · 冇包晚餐，出去食 · 上藏王樹冰約 35–40 分鐘車"
   ],
   [
    "②",
@@ -714,16 +718,16 @@ const DATA = {
  ],
  "food": [
   [
-   "D1–D2",
-   "藏王溫泉",
-   "酒店晚餐（山形牛）",
-   "一泊二食"
+   "D1–D2 夜",
+   "山形市",
+   "山形牛（燒肉／壽喜燒／牛扒）",
+   "山形市餐廳多，揀一晚食好啲"
   ],
   [
    "D1–D2",
    "藏王溫泉",
    "藏王成吉思汗烤羊肉、玉蒟蒻",
-   "其中一晚出溫泉街食"
+   "上去睇樹冰順便食（可選）"
   ],
   [
    "D2",
@@ -888,6 +892,24 @@ const DATA = {
    "天童 AEON",
    "イオンモール天童",
    "https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%A4%A9%E7%AB%A5"
+  ],
+  [
+   "D1–D2",
+   "山形站前 Richmond 酒店",
+   "リッチモンドホテル山形駅前",
+   "https://www.google.com/maps/search/?api=1&query=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E5%B1%B1%E5%BD%A2%E9%A7%85%E5%89%8D"
+  ],
+  [
+   "D1–D2",
+   "七日町（山形市行街）",
+   "七日町 山形市",
+   "https://www.google.com/maps/search/?api=1&query=%E4%B8%83%E6%97%A5%E7%94%BA%20%E5%B1%B1%E5%BD%A2%E5%B8%82"
+  ],
+  [
+   "D1–D2",
+   "S-PAL 山形（山形站）",
+   "エスパル山形",
+   "https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%82%B9%E3%83%91%E3%83%AB%E5%B1%B1%E5%BD%A2"
   ],
   [
    "D3",
