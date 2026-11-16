@@ -166,7 +166,7 @@ ul.plain li span{color:var(--muted)}
 
   <section>
     <h2>地點（撳開 Google Maps 加星）</h2>
-    <p class="sub">📍 景點　🅿️ 附近停車場（撳入去會搜嗰度附近嘅停車場）</p>
+    <p class="sub">📍 景點　🅿️ 停車場（主＝最近；後備＝爆咗就去）</p>
     <div id="places" class="places"></div>
   </section>
 
@@ -215,7 +215,7 @@ ul.plain li span{color:var(--muted)}
     </ul>
   </section>
 
-  <p class="updated">更新：2026-11-16（加かまくら館、附近停車場）</p>
+  <p class="updated">更新：2026-11-16（每個景點加主要＋後備停車場）</p>
 </div>
 
 <script>
@@ -337,7 +337,7 @@ const DATA = {
     ],
     [
      "17:30",
-     "泊臨時停車場或橫手站收費停車場"
+     "泊橫手站東口市營停車場或者臨時停車場（橫手武道館，有免費接駁巴士）"
     ],
     [
      "17:40",
@@ -877,15 +877,39 @@ const DATA = {
   ],
   [
    "D1",
-   "🅿️ 藏王纜車停車場",
-   "蔵王ロープウェイ 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E8%94%B5%E7%8E%8B%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：藏王纜車第 1–3 停車場（平日免費，假日 ¥1,000）",
+   "蔵王ロープウェイ 第1駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E8%94%B5%E7%8E%8B%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%20%E7%AC%AC1%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D1",
+   "🅿️ 後備：藏王中央纜車停車場",
+   "蔵王中央ロープウェイ 駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E8%94%B5%E7%8E%8B%E4%B8%AD%E5%A4%AE%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D1",
+   "🅿️ 後備：竜山停車場（免費，約 300 個）",
+   "竜山駐車場 蔵王温泉",
+   "https://www.google.com/maps/search/?api=1&query=%E7%AB%9C%E5%B1%B1%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E8%94%B5%E7%8E%8B%E6%B8%A9%E6%B3%89"
   ],
   [
    "D1–D2",
    "山形站前 Richmond 酒店",
    "リッチモンドホテル山形駅前",
    "https://www.google.com/maps/search/?api=1&query=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E5%B1%B1%E5%BD%A2%E9%A7%85%E5%89%8D"
+  ],
+  [
+   "D1–D2",
+   "🅿️ 後備：県民べにばな停車場（24h 最高 ¥800）",
+   "県民べにばな駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E7%9C%8C%E6%B0%91%E3%81%B9%E3%81%AB%E3%81%B0%E3%81%AA%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D1–D2",
+   "🅿️ 後備：24h 山形站西口停車場（24h 最高 ¥500）",
+   "24h山形駅西口駐車場",
+   "https://www.google.com/maps/search/?api=1&query=24h%E5%B1%B1%E5%BD%A2%E9%A7%85%E8%A5%BF%E5%8F%A3%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D1–D2",
@@ -907,9 +931,21 @@ const DATA = {
   ],
   [
    "D2",
-   "🅿️ 山寺附近停車場",
-   "山寺 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E5%B1%B1%E5%AF%BA%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：山寺停車場（¥500，500 個）",
+   "山寺駐車場 山形",
+   "https://www.google.com/maps/search/?api=1&query=%E5%B1%B1%E5%AF%BA%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%B1%B1%E5%BD%A2"
+  ],
+  [
+   "D2",
+   "🅿️ 後備：根本中堂橫停車場（¥500）",
+   "根本中堂横駐車場 山寺",
+   "https://www.google.com/maps/search/?api=1&query=%E6%A0%B9%E6%9C%AC%E4%B8%AD%E5%A0%82%E6%A8%AA%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%B1%B1%E5%AF%BA"
+  ],
+  [
+   "D2",
+   "🅿️ 後備：山寺站前停車場（¥500）",
+   "山寺駅前駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E5%B1%B1%E5%AF%BA%E9%A7%85%E5%89%8D%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D2",
@@ -925,7 +961,7 @@ const DATA = {
   ],
   [
    "D3",
-   "🅿️ 狐狸村停車場",
+   "🅿️ 狐狸村場內停車場（750 個，好難滿）",
    "宮城蔵王キツネ村 駐車場",
    "https://www.google.com/maps/search/?api=1&query=%E5%AE%AE%E5%9F%8E%E8%94%B5%E7%8E%8B%E3%82%AD%E3%83%84%E3%83%8D%E6%9D%91%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
@@ -937,15 +973,21 @@ const DATA = {
   ],
   [
    "D3",
-   "🅿️ 橫手站附近停車場",
-   "横手駅 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%89%8B%E9%A7%85%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 臨時：橫手武道館（免費＋免費接駁巴士）",
+   "横手市武道館",
+   "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%89%8B%E5%B8%82%E6%AD%A6%E9%81%93%E9%A4%A8"
   ],
   [
    "D3",
-   "🅿️ 橫手市役所附近停車場",
-   "横手市役所 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%89%8B%E5%B8%82%E5%BD%B9%E6%89%80%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 後備：橫手站東口市營停車場（24h 最高 ¥1,000）",
+   "よこてイースト駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E3%82%88%E3%81%93%E3%81%A6%E3%82%A4%E3%83%BC%E3%82%B9%E3%83%88%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D3",
+   "🅿️ 後備：橫手站西口停車場（最高 ¥1,000）",
+   "横手駅西口駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%89%8B%E9%A7%85%E8%A5%BF%E5%8F%A3%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D3",
@@ -985,9 +1027,21 @@ const DATA = {
   ],
   [
    "D4",
-   "🅿️ 角館武家屋敷停車場",
-   "角館 武家屋敷 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E8%A7%92%E9%A4%A8%20%E6%AD%A6%E5%AE%B6%E5%B1%8B%E6%95%B7%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：仙北市營櫻並木停車場（冬天免費）",
+   "仙北市営桜並木駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8C%97%E5%B8%82%E5%96%B6%E6%A1%9C%E4%B8%A6%E6%9C%A8%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D4",
+   "🅿️ 後備：Times 秋田銀行角館支店",
+   "タイムズ秋田銀行角館支店",
+   "https://www.google.com/maps/search/?api=1&query=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E7%A7%8B%E7%94%B0%E9%8A%80%E8%A1%8C%E8%A7%92%E9%A4%A8%E6%94%AF%E5%BA%97"
+  ],
+  [
+   "D4",
+   "🅿️ 後備：角館站前免費停車場",
+   "角館駅前 無料駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E8%A7%92%E9%A4%A8%E9%A7%85%E5%89%8D%20%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D4",
@@ -997,9 +1051,21 @@ const DATA = {
   ],
   [
    "D4",
-   "🅿️ 辰子像停車場",
-   "たつこ像 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E3%81%9F%E3%81%A4%E3%81%93%E5%83%8F%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：斎藤孝酒店停車場（買嘢免費）",
+   "斎藤孝酒店 田沢湖",
+   "https://www.google.com/maps/search/?api=1&query=%E6%96%8E%E8%97%A4%E5%AD%9D%E9%85%92%E5%BA%97%20%E7%94%B0%E6%B2%A2%E6%B9%96"
+  ],
+  [
+   "D4",
+   "🅿️ 後備：田澤湖 Rose Park Hotel 停車場（約 ¥500）",
+   "田沢湖ローズパークホテル",
+   "https://www.google.com/maps/search/?api=1&query=%E7%94%B0%E6%B2%A2%E6%B9%96%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%91%E3%83%BC%E3%82%AF%E3%83%9B%E3%83%86%E3%83%AB"
+  ],
+  [
+   "D4",
+   "🅿️ 後備：潟尻園地公廁停車場（免費，5 個）",
+   "潟尻園地 田沢湖",
+   "https://www.google.com/maps/search/?api=1&query=%E6%BD%9F%E5%B0%BB%E5%9C%92%E5%9C%B0%20%E7%94%B0%E6%B2%A2%E6%B9%96"
   ],
   [
    "D4",
@@ -1015,9 +1081,15 @@ const DATA = {
   ],
   [
    "D4",
-   "🅿️ 十和田湖休屋停車場",
-   "十和田湖 休屋 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E4%BC%91%E5%B1%8B%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：休屋北停車場",
+   "休屋北駐車場 十和田湖",
+   "https://www.google.com/maps/search/?api=1&query=%E4%BC%91%E5%B1%8B%E5%8C%97%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96"
+  ],
+  [
+   "D4",
+   "🅿️ 後備：休屋南停車場",
+   "休屋南駐車場 十和田湖",
+   "https://www.google.com/maps/search/?api=1&query=%E4%BC%91%E5%B1%8B%E5%8D%97%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96"
   ],
   [
    "D4",
@@ -1045,9 +1117,21 @@ const DATA = {
   ],
   [
    "D5",
-   "🅿️ 石ヶ戸停車場",
-   "石ヶ戸 駐車場 奥入瀬",
-   "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B8%20%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%A5%A5%E5%85%A5%E7%80%AC"
+   "🅿️ 主：石ヶ戸停車場（免費）",
+   "石ヶ戸駐車場 奥入瀬",
+   "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B8%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%A5%A5%E5%85%A5%E7%80%AC"
+  ],
+  [
+   "D5",
+   "🅿️ 後備：奧入瀨溪流館（免費，80 個）",
+   "奥入瀬渓流館 駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E5%A5%A5%E5%85%A5%E7%80%AC%E6%B8%93%E6%B5%81%E9%A4%A8%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D5",
+   "🅿️ 後備：焼山停車場（免費，約 250 個）",
+   "焼山駐車場 奥入瀬",
+   "https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E5%B1%B1%E9%A7%90%E8%BB%8A%E5%A0%B4%20%E5%A5%A5%E5%85%A5%E7%80%AC"
   ],
   [
    "D5",
@@ -1087,9 +1171,21 @@ const DATA = {
   ],
   [
    "D6",
-   "🅿️ 中尊寺停車場",
-   "中尊寺 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：中尊寺第一停車場（¥400）",
+   "中尊寺第一駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA%E7%AC%AC%E4%B8%80%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D6",
+   "🅿️ 後備：中尊寺第二停車場（¥400，322 個）",
+   "中尊寺第二駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA%E7%AC%AC%E4%BA%8C%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D6",
+   "🅿️ 後備：平泉 Rest House 停車場",
+   "平泉レストハウス 駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E6%B3%89%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D6",
@@ -1099,7 +1195,19 @@ const DATA = {
   ],
   [
    "D6",
-   "🅿️ 嚴美溪停車場",
+   "🅿️ 主：道之站嚴美溪（免費）",
+   "道の駅厳美渓",
+   "https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85%E5%8E%B3%E7%BE%8E%E6%B8%93"
+  ],
+  [
+   "D6",
+   "🅿️ 後備：自然休養村管理中心停車場（免費）",
+   "厳美渓 自然休養村管理センター",
+   "https://www.google.com/maps/search/?api=1&query=%E5%8E%B3%E7%BE%8E%E6%B8%93%20%E8%87%AA%E7%84%B6%E4%BC%91%E9%A4%8A%E6%9D%91%E7%AE%A1%E7%90%86%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC"
+  ],
+  [
+   "D6",
+   "🅿️ 後備：嚴美溪附近收費停車場",
    "厳美渓 駐車場",
    "https://www.google.com/maps/search/?api=1&query=%E5%8E%B3%E7%BE%8E%E6%B8%93%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
@@ -1111,9 +1219,9 @@ const DATA = {
   ],
   [
    "D6",
-   "🅿️ 猊鼻溪停車場",
-   "げいび渓 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E3%81%92%E3%81%84%E3%81%B3%E6%B8%93%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 猊鼻溪停車場（河川敷免費約 200 個／第二停車場）",
+   "猊鼻渓 駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E7%8C%8A%E9%BC%BB%E6%B8%93%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D6",
@@ -1123,9 +1231,15 @@ const DATA = {
   ],
   [
    "D6",
-   "🅿️ 伊豆沼停車場",
-   "伊豆沼 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E8%B1%86%E6%B2%BC%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：伊豆沼・內沼 Sanctuary Center（栗原，免費）",
+   "宮城県伊豆沼・内沼サンクチュアリセンター",
+   "https://www.google.com/maps/search/?api=1&query=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BC%8A%E8%B1%86%E6%B2%BC%E3%83%BB%E5%86%85%E6%B2%BC%E3%82%B5%E3%83%B3%E3%82%AF%E3%83%81%E3%83%A5%E3%82%A2%E3%83%AA%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC"
+  ],
+  [
+   "D6",
+   "🅿️ 後備：登米市伊豆沼・內沼 Sanctuary Center",
+   "登米市伊豆沼・内沼サンクチュアリセンター",
+   "https://www.google.com/maps/search/?api=1&query=%E7%99%BB%E7%B1%B3%E5%B8%82%E4%BC%8A%E8%B1%86%E6%B2%BC%E3%83%BB%E5%86%85%E6%B2%BC%E3%82%B5%E3%83%B3%E3%82%AF%E3%83%81%E3%83%A5%E3%82%A2%E3%83%AA%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC"
   ],
   [
    "D6",
@@ -1153,9 +1267,21 @@ const DATA = {
   ],
   [
    "D7",
-   "🅿️ 松島海岸停車場",
-   "松島海岸 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：松島公園第 1 停車場（最高 ¥1,000）",
+   "松島公園第1駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E5%85%AC%E5%9C%92%E7%AC%AC1%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D7",
+   "🅿️ 後備：松島公園第 5 停車場",
+   "松島公園第5駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E5%85%AC%E5%9C%92%E7%AC%AC5%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D7",
+   "🅿️ 後備：町營三十刈停車場（免費，310 個）",
+   "町営三十刈駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E7%94%BA%E5%96%B6%E4%B8%89%E5%8D%81%E5%88%88%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D7",
@@ -1189,15 +1315,33 @@ const DATA = {
   ],
   [
    "D7",
-   "🅿️ 鹽竈神社山頂停車場",
-   "鹽竈神社 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E9%B9%BD%E7%AB%88%E7%A5%9E%E7%A4%BE%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 主：鹽竈神社第 1 停車場（免費）",
+   "鹽竈神社 第1駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E9%B9%BD%E7%AB%88%E7%A5%9E%E7%A4%BE%20%E7%AC%AC1%E9%A7%90%E8%BB%8A%E5%A0%B4"
   ],
   [
    "D7",
-   "🅿️ 鹽竈（食壽司）附近停車場",
-   "本塩釜駅 駐車場",
-   "https://www.google.com/maps/search/?api=1&query=%E6%9C%AC%E5%A1%A9%E9%87%9C%E9%A7%85%20%E9%A7%90%E8%BB%8A%E5%A0%B4"
+   "🅿️ 後備：鹽竈神社第 2、第 3 停車場",
+   "鹽竈神社 第2駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E9%B9%BD%E7%AB%88%E7%A5%9E%E7%A4%BE%20%E7%AC%AC2%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D7",
+   "🅿️ 食壽司：塩竈中央公共停車場（最高 ¥700）",
+   "塩竈中央公共駐車場",
+   "https://www.google.com/maps/search/?api=1&query=%E5%A1%A9%E7%AB%88%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%85%B1%E9%A7%90%E8%BB%8A%E5%A0%B4"
+  ],
+  [
+   "D7",
+   "🅿️ 後備：Repark 本塩釜站前",
+   "リパーク本塩釜駅前",
+   "https://www.google.com/maps/search/?api=1&query=%E3%83%AA%E3%83%91%E3%83%BC%E3%82%AF%E6%9C%AC%E5%A1%A9%E9%87%9C%E9%A7%85%E5%89%8D"
+  ],
+  [
+   "D7",
+   "🅿️ 後備：Times 本塩釜站前",
+   "タイムズ本塩釜駅前",
+   "https://www.google.com/maps/search/?api=1&query=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E6%9C%AC%E5%A1%A9%E9%87%9C%E9%A7%85%E5%89%8D"
   ],
   [
    "D7",
