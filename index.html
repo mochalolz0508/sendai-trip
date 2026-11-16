@@ -117,12 +117,12 @@ ul.plain li span{color:var(--muted)}
   <nav class="days" id="daynav" aria-label="跳去邊日"></nav>
 
   <div class="map" aria-label="路線示意圖">
-    <svg viewBox="0 0 360 480" role="img" aria-label="全東北環迴路線：仙台機場、金蛇水神社、藏王樹冰、山形、狐狸村、山寺、橫手、角館、田澤湖、十和田湖、奧入瀨、盛岡、平泉、猊鼻溪、仙台、松島、鹽竈">
+    <svg viewBox="0 0 360 480" role="img" aria-label="全東北環迴路線：仙台機場、藏王樹冰、山形、狐狸村、山寺、橫手、角館、田澤湖、十和田湖、奧入瀨、盛岡、平泉、猊鼻溪、仙台、松島、鹽竈">
       <g font-family="Noto Sans TC, PingFang TC, sans-serif" font-size="13" fill="var(--line)" font-weight="700" letter-spacing="2">
         <text x="300" y="86">青森</text><text x="40" y="196">秋田</text><text x="300" y="200">岩手</text><text x="36" y="330">山形</text><text x="300" y="440">宮城</text>
       </g>
       <g fill="none" stroke="var(--road)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="240,410 222,428 135,408 112,380 190,445 205,330 215,240 150,225 160,175 175,150 222,132 250,40 275,30 240,150 245,250 275,255 225,380 272,345 252,364 262,382 225,380"/>
+        <polyline points="240,410 135,408 112,380 190,445 205,330 215,240 150,225 160,175 175,150 222,132 250,40 275,30 240,150 245,250 275,255 225,380 272,345 252,364 262,382 225,380"/>
       </g>
       <g fill="none" stroke="var(--road)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round">
         <polyline points="112,380 150,365"/><polyline points="112,380 135,408"/>
@@ -213,7 +213,7 @@ ul.plain li span{color:var(--muted)}
     </ul>
   </section>
 
-  <p class="updated">更新：2026-11-16（AER 改喺 omakase 前、Pokémon Center）</p>
+  <p class="updated">更新：2026-11-16（金蛇水神社改喺 D9 去機場前）</p>
 </div>
 
 <script>
@@ -222,8 +222,8 @@ const DATA = {
   {
    "d": "2/11",
    "w": "四",
-   "title": "金蛇水神社、樹冰點燈",
-   "route": "仙台機場 → 金蛇水神社 → 藏王（樹冰）→ 山形市",
+   "title": "樹冰點燈",
+   "route": "仙台機場 → 藏王（樹冰）→ 山形市",
    "items": [
     [
      "14:05",
@@ -234,34 +234,30 @@ const DATA = {
      "機場分店取車"
     ],
     [
-     "15:40",
-     "金蛇水神社，求財運（20–30 分鐘）"
-    ],
-    [
-     "16:10",
+     "15:20",
      "直接上藏王，約 1 hr 20 分"
     ],
     [
-     "17:30",
+     "17:00",
      "坐纜車睇樹冰點燈（夜景版）",
      1
     ],
     [
-     "19:00",
+     "18:15",
      "揸車落山（慢慢揸、用低波）"
     ],
     [
-     "19:30",
+     "18:45",
      "山形站前 check-in"
     ],
     [
-     "19:45",
+     "19:00",
      "山形牛晚餐，行站前"
     ]
    ],
    "stay": "山形站前 Richmond",
-   "drive": "約 130 km · 2 hr",
-   "check": "航班遲過 14:30 或落大雪就唔去金蛇（社務所 16:00 閂）；攰或落雪就直接去山形，樹冰留 D2 朝早"
+   "drive": "約 110 km · 1.75 hr",
+   "check": "攰或落雪就直接去山形，樹冰留 D2 朝早；2/11 有冇點燈要 check"
   },
   {
    "d": "2/12",
@@ -571,24 +567,32 @@ const DATA = {
   {
    "d": "2/19",
    "w": "五",
-   "title": "返港",
-   "route": "仙台 → 機場",
+   "title": "金蛇水神社、返港",
+   "route": "仙台 → 金蛇水神社 → 機場",
    "items": [
     [
-     "09:00",
+     "08:30",
      "check-out，行仙台朝市（海鮮可樂餅、士多啤梨）"
     ],
     [
-     "10:30",
+     "09:30",
      "仙台站 S-PAL 買手信、毛豆奶昔"
     ],
     [
-     "11:20",
-     "坐機場 Access 線，約 25 分鐘"
+     "10:30",
+     "JR 東北本線去岩沼站，約 20 分鐘"
     ],
     [
-     "12:00",
-     "到機場，先食飯買手信"
+     "11:00",
+     "的士去金蛇水神社，求財運 30 分鐘"
+    ],
+    [
+     "11:45",
+     "的士去仙台機場，約 15–20 分鐘"
+    ],
+    [
+     "12:15",
+     "到機場：食飯、買手信、退稅（1F）"
     ],
     [
      "15:00",
@@ -596,8 +600,8 @@ const DATA = {
     ]
    ],
    "stay": "—",
-   "drive": "Access 線",
-   "check": ""
+   "drive": "JR＋的士",
+   "check": "帶住行李坐的士；社務所 8:00–16:00"
   }
  ],
  "hotels": [
@@ -877,27 +881,9 @@ const DATA = {
   ],
   [
    "D1",
-   "金蛇水神社",
-   "金蛇水神社",
-   "https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE"
-  ],
-  [
-   "D1",
    "藏王纜車山麓站（樹冰）",
    "蔵王ロープウェイ 山麓駅",
    "https://www.google.com/maps/search/?api=1&query=%E8%94%B5%E7%8E%8B%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%20%E5%B1%B1%E9%BA%93%E9%A7%85"
-  ],
-  [
-   "D2",
-   "山寺（立石寺）",
-   "宝珠山 立石寺",
-   "https://www.google.com/maps/search/?api=1&query=%E5%AE%9D%E7%8F%A0%E5%B1%B1%20%E7%AB%8B%E7%9F%B3%E5%AF%BA"
-  ],
-  [
-   "D2",
-   "天童 AEON",
-   "イオンモール天童",
-   "https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%A4%A9%E7%AB%A5"
   ],
   [
    "D1–D2",
@@ -916,6 +902,18 @@ const DATA = {
    "S-PAL 山形（山形站）",
    "エスパル山形",
    "https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%82%B9%E3%83%91%E3%83%AB%E5%B1%B1%E5%BD%A2"
+  ],
+  [
+   "D2",
+   "山寺（立石寺）",
+   "宝珠山 立石寺",
+   "https://www.google.com/maps/search/?api=1&query=%E5%AE%9D%E7%8F%A0%E5%B1%B1%20%E7%AB%8B%E7%9F%B3%E5%AF%BA"
+  ],
+  [
+   "D2",
+   "天童 AEON",
+   "イオンモール天童",
+   "https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%A4%A9%E7%AB%A5"
   ],
   [
    "D3",
@@ -1186,6 +1184,12 @@ const DATA = {
    "Pokémon Center 東北（仙台 PARCO 3F）",
    "ポケモンセンタートウホク",
    "https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%88%E3%82%A6%E3%83%9B%E3%82%AF"
+  ],
+  [
+   "D9",
+   "金蛇水神社（岩沼站坐的士）",
+   "金蛇水神社",
+   "https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE"
   ],
   [
    "D9",
